@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ServiceCard from '../components/ServiceCard.astro';
-import BookNowButton from '../components/BookNowButton.astro';
 import { siteCopy } from '../content/siteCopy';
 import { services } from '../config/site';
 
@@ -25,14 +24,6 @@ const copy = siteCopy.services;
   <Fragment slot="contentSections">
     <section class="shell card-grid services-grid section-block">
       {services.map((service) => <ServiceCard service={service} />)}
-    </section>
-  </Fragment>
-
-  <Fragment slot="ctaStrip">
-    <section class="shell contact-band">
-      <h2>{copy.cta.title}</h2>
-      <p>{copy.cta.body}</p>
-      <BookNowButton context="services_page" />
     </section>
   </Fragment>
 </BaseLayout>

@@ -2,16 +2,24 @@
 import BookNowButton from './BookNowButton.astro';
 import { siteConfig } from '../config/site';
 
-const currentPath = Astro.url.pathname;
+const normalizePath = (path: string) => {
+  if (path.length > 1 && path.endsWith('/')) {
+    return path.slice(0, -1);
+  }
+
+  return path;
+};
+
+const currentPath = normalizePath(Astro.url.pathname);
 ---
 
 <header class="site-header">
   <div class="shell nav-shell">
     <a href="/" class="brand" aria-label="Bondi Medical Centre home">
-      <span class="brand-mark" aria-hidden="true"></span>
+      <img src="/bmc.svg" alt="" class="brand-logo" aria-hidden="true" />
       <span>
         <strong>{siteConfig.shortName}</strong>
-        <small>Bondi, NSW</small>
+        <small>Bondi Junction NSW</small>
       </span>
     </a>
 
@@ -22,7 +30,7 @@ const currentPath = Astro.url.pathname;
             <li>
               <a
                 href={item.href}
-                aria-current={currentPath === item.href ? 'page' : undefined}
+                aria-current={currentPath === normalizePath(item.href) ? 'page' : undefined}
               >
                 {item.label}
               </a>
@@ -33,5 +41,8 @@ const currentPath = Astro.url.pathname;
     </nav>
 
     <BookNowButton className="header-cta" context="header" />
+    <a href={`tel:${siteConfig.phoneHref}`} data-track="phone_click" class="ghost-link header-call-btn">
+      Call (02) 9389 7667
+    </a>
   </div>
 </header>

@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import BookNowButton from '../components/BookNowButton.astro';
 import { siteCopy } from '../content/siteCopy';
 import { siteConfig } from '../config/site';
 
@@ -27,6 +26,7 @@ const copy = siteCopy.contact;
         <h2>{copy.clinicDetails.title}</h2>
         <p>{siteConfig.addressLine1}</p>
         <p>{siteConfig.addressLine2}</p>
+        <p>{siteConfig.addressLine3}</p>
         <p>Phone: <a href={`tel:${siteConfig.phoneHref}`} data-track="phone_click">{siteConfig.phoneDisplay}</a></p>
         <p>Fax: {siteConfig.faxDisplay}</p>
         <p>Email: <a href={`mailto:${siteConfig.email}`} data-track="email_click">{siteConfig.email}</a></p>
@@ -36,6 +36,22 @@ const copy = siteCopy.contact;
         <h2>{copy.whereToFindUs.title}</h2>
         <p>{copy.whereToFindUs.body}</p>
         <p>{copy.whereToFindUs.support}</p>
+      </article>
+    </section>
+
+    <section class="shell section-block">
+      <article class="sidebar-card">
+        <h2>Trading hours</h2>
+        <ul class="hours-list">
+          {
+            siteConfig.openingHours.map((item) => (
+              <li>
+                <span>{item.day}</span>
+                <strong>{item.hours}</strong>
+              </li>
+            ))
+          }
+        </ul>
       </article>
     </section>
 
@@ -52,7 +68,7 @@ const copy = siteCopy.contact;
     </section>
 
     <section class="shell section-block">
-      <img src="/images/spring_st_Entrance.jpg" alt="Bondi Medical Spring Street access" class="location-image" />
+      <img src="/images/spring_st_Entrance.jpg" alt="Bondi Medical Spring St access" class="location-image" />
       <iframe
         title="Bondi Medical Centre map"
         src={siteConfig.mapEmbedUrl}
@@ -60,14 +76,6 @@ const copy = siteCopy.contact;
         referrerpolicy="no-referrer-when-downgrade"
         class="map-embed"
       ></iframe>
-    </section>
-  </Fragment>
-
-  <Fragment slot="ctaStrip">
-    <section class="shell contact-band">
-      <h2>{copy.cta.title}</h2>
-      <p>{copy.cta.body}</p>
-      <BookNowButton context="contact_page" />
     </section>
   </Fragment>
 </BaseLayout>

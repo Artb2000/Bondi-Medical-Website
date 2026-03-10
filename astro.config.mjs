@@ -12,10 +12,10 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
     server: {
-      allowedHosts: ['cube.tail8603bc.ts.net', 'localhost', '127.0.0.1']
+      allowedHosts: ['.tail8603bc.ts.net', 'localhost', '127.0.0.1']
     },
     preview: {
-      allowedHosts: ['cube.tail8603bc.ts.net', 'localhost', '127.0.0.1']
+      allowedHosts: ['.tail8603bc.ts.net', 'localhost', '127.0.0.1']
     }
   }
 });

@@ -16,8 +16,9 @@ export const siteConfig = {
   phoneDisplay: '(02) 9389 7667',
   phoneHref: '+61293897667',
   faxDisplay: '(02) 9386 4617',
-  addressLine1: 'Suite 101A, Level 1, 183-193 Oxford Street,',
-  addressLine2: 'Bondi Junction NSW 2022',
+  addressLine1: 'Suite 101A Level 1',
+  addressLine2: '183-193 Oxford St',
+  addressLine3: 'Bondi Junction NSW 2022',
   hoursSummary:
     'Monday to Friday, 9:00 am to 5:00 pm; closed Saturday and Sunday.',
   openingHours: [
@@ -26,9 +27,9 @@ export const siteConfig = {
     { day: 'Sunday', hours: 'Closed' }
   ],
   mapEmbedUrl:
-    'https://www.google.com/maps?q=Suite%20101A%2C%20Level%201%2C%20183-193%20Oxford%20Street%2C%20Bondi%20Junction%20NSW%202022&output=embed',
+    'https://www.google.com/maps?q=Suite%20101A%2C%20Level%201%2C%20183-193%20Oxford%20St%2C%20Bondi%20Junction%20NSW%202022&output=embed',
   mapDirectionsUrl:
-    'https://maps.google.com/?q=Suite+101A+Level+1+183-193+Oxford+Street+Bondi+Junction+NSW+2022',
+    'https://maps.google.com/?q=Suite+101A+Level+1+183-193+Oxford+St+Bondi+Junction+NSW+2022',
   hotdocEmbedUrl:
     import.meta.env.PUBLIC_HOTDOC_EMBED_URL ??
     'https://www.hotdoc.com.au/medical-centres',

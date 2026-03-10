@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import DoctorCard from '../components/DoctorCard.astro';
-import BookNowButton from '../components/BookNowButton.astro';
 import { siteCopy } from '../content/siteCopy';
 
 const copy = siteCopy.doctors;
@@ -31,16 +30,6 @@ const copy = siteCopy.doctors;
       <p>
         {copy.philosophy.body}
       </p>
-    </section>
-  </Fragment>
-
-  <Fragment slot="ctaStrip">
-    <section class="shell contact-band">
-      <h2>{copy.cta.title}</h2>
-      <p>
-        {copy.cta.body}
-      </p>
-      <BookNowButton context="doctors_page" />
     </section>
   </Fragment>
 </BaseLayout>
