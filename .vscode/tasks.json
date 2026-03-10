@@ -42,7 +42,7 @@
     {
       "label": "Share Public",
       "type": "shell",
-      "command": "npm run build; Start-Process -FilePath npm.cmd -ArgumentList @('run','preview','--','--host','127.0.0.1','--port','4321'); Start-Sleep -Seconds 3; tailscale funnel 4321; tailscale funnel status"
+      "command": "npm run build; tailscale funnel reset; tailscale serve reset; Start-Process -FilePath npx.cmd -ArgumentList @('--yes','serve','-s','dist','-l','4451'); Start-Sleep -Seconds 3; tailscale funnel --bg 4451; tailscale funnel status"
     },
     {
       "label": "Docker Build",
