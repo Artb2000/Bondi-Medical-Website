@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FeeTable from '../components/FeeTable.astro';
-import SidebarCard from '../components/SidebarCard.astro';
 import { siteCopy } from '../content/siteCopy';
 
 const copy = siteCopy.fees;
@@ -22,10 +21,10 @@ const copy = siteCopy.fees;
   </Fragment>
 
   <Fragment slot="contentSections">
-    <section id="book-now" class="shell section-block page-two-col">
+    <section id="book-now" class="shell section-block">
       <div>
-        <section class="fees-section">
-          <h2>{copy.standardFees.title}</h2>
+        <section class="fees-section fees-pane">
+          <h2 class="pane-heading">{copy.standardFees.title}</h2>
           <p>{copy.standardFees.body}</p>
           <FeeTable
             columns={copy.standardFees.table.columns}
@@ -33,8 +32,8 @@ const copy = siteCopy.fees;
           />
         </section>
 
-        <section class="fees-section">
-          <h2>{copy.skinFees.title}</h2>
+        <section class="fees-section fees-pane">
+          <h2 class="pane-heading">{copy.skinFees.title}</h2>
           <p>{copy.skinFees.body}</p>
           <FeeTable
             columns={copy.skinFees.table.columns}
@@ -43,16 +42,9 @@ const copy = siteCopy.fees;
         </section>
 
         <section class="fees-section">
-          <h2>{copy.additionalFees.title}</h2>
           <p>{copy.additionalFees.body}</p>
           <p>{copy.additionalFees.support}</p>
         </section>
-      </div>
-
-      <div class="sidebar-stack">
-        <SidebarCard title={copy.afterHours.title}>
-          <p>{copy.afterHours.body}</p>
-        </SidebarCard>
       </div>
     </section>
   </Fragment>

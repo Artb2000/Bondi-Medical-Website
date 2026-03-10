@@ -22,7 +22,7 @@ const copy = siteCopy.contact;
 
   <Fragment slot="contentSections">
     <section class="shell info-grid section-block">
-      <article>
+      <article class="contact-pane">
         <h2>{copy.clinicDetails.title}</h2>
         <p>{siteConfig.addressLine1}</p>
         <p>{siteConfig.addressLine2}</p>
@@ -31,16 +31,10 @@ const copy = siteCopy.contact;
         <p>Fax: {siteConfig.faxDisplay}</p>
         <p>Email: <a href={`mailto:${siteConfig.email}`} data-track="email_click">{siteConfig.email}</a></p>
       </article>
-
-      <article>
-        <h2>{copy.whereToFindUs.title}</h2>
-        <p>{copy.whereToFindUs.body}</p>
-        <p>{copy.whereToFindUs.support}</p>
-      </article>
     </section>
 
     <section class="shell section-block">
-      <article class="sidebar-card">
+      <article class="sidebar-card contact-pane">
         <h2>Trading hours</h2>
         <ul class="hours-list">
           {
@@ -55,13 +49,24 @@ const copy = siteCopy.contact;
       </article>
     </section>
 
+    <section class="shell section-block">
+      <article class="sidebar-card contact-pane">
+        <h2>{copy.whereToFindUs.title}</h2>
+        <p>{copy.whereToFindUs.body}</p>
+        <p>{copy.whereToFindUs.support}</p>
+        <ul class="where-list">
+          {copy.whereToFindUs.entrances.map((entrance) => <li>{entrance}</li>)}
+        </ul>
+      </article>
+    </section>
+
     <section class="shell info-grid section-block">
-      <article>
+      <article class="contact-pane">
         <h2>{copy.byCar.title}</h2>
         <p>{copy.byCar.body}</p>
       </article>
 
-      <article>
+      <article class="contact-pane">
         <h2>{copy.byPublicTransport.title}</h2>
         <p>{copy.byPublicTransport.body}</p>
       </article>

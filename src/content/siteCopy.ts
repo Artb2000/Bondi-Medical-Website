@@ -52,7 +52,7 @@ export const siteCopy = {
     description:
       'Meet the team at Bondi Medical Centre, including practitioners with extensive experience in general practice and skin cancer medicine.',
     hero: {
-      heading: 'Team at Bondi Medical Centre',
+      heading: 'Our team of professionals',
       intro:
         'Our doctors provide general practice care with particular experience in skin cancer medicine, preventive health, and practical day-to-day treatment.'
     },
@@ -106,9 +106,9 @@ export const siteCopy = {
   fees: {
     title: 'Fees | Bondi Medical Centre',
     description:
-      'View appointments, opening hours, after-hours care, and current consultation fees at Bondi Medical Centre in Bondi Junction.',
+      'View appointments, opening hours, and current consultation fees at Bondi Medical Centre in Bondi Junction.',
     hero: {
-      heading: 'Fees',
+      heading: 'Consultation Fees',
       intro:
         'Bondi Medical Centre is a mixed billing practice, and phone consultations are available for existing patients who have attended the clinic within the last 12 months. We offer booked appointments and aim to accommodate walk-in patients whenever possible.'
     },
@@ -119,24 +119,28 @@ export const siteCopy = {
     standardFees: {
       title: 'Standard GP fees',
       body:
-        'Where bulk billing does not apply, GP consultations have a standard out-of-pocket (gap).',
+        'For Medicare-eligible patients, standard GP consultations have a $39 out-of-pocket cost. Full consultation fees and Medicare rebates are shown below.',
       table: {
         columns: [
           { key: 'consultationType', label: 'GP Consultation' },
-          { key: 'feeSummary', label: 'Fee summary' }
+          { key: 'yourCost', label: 'Your cost' },
+          { key: 'feeDetails', label: 'Fee details' }
         ],
         rows: [
           {
             consultationType: 'Standard consultation',
-            feeSummary: '$39 out-of-pocket\n($92.10 fee less $53.10 Medicare)'
+            yourCost: '$39 gap',
+            feeDetails: '$92.10 fee, Medicare rebate $53.10'
           },
           {
             consultationType: 'Long consultation',
-            feeSummary: '$39 out-of-pocket\n($123.90 fee less $84.90 Medicare)'
+            yourCost: '$39 gap',
+            feeDetails: '$123.90 fee, Medicare rebate $84.90'
           },
           {
             consultationType: 'Prolonged consultation',
-            feeSummary: '$39 out-of-pocket\n($164.10 fee less $125.10 Medicare)'
+            yourCost: '$39 gap',
+            feeDetails: '$164.10 fee, Medicare rebate $125.10'
           }
         ]
       }
@@ -144,45 +148,39 @@ export const siteCopy = {
     skinFees: {
       title: 'Skin clinic fees',
       body:
-        'Skin clinic consultations have a standard out-of-pocket (gap) for non-concession card holders.',
+        'For Medicare-eligible patients, skin consultations have a $65 out-of-pocket cost. Full consultation fees and Medicare rebates are shown below.',
       table: {
         columns: [
           { key: 'consultationType', label: 'Skin Consultation' },
-          { key: 'feeSummary', label: 'Fee summary' }
+          { key: 'yourCost', label: 'Your cost' },
+          { key: 'feeDetails', label: 'Fee details' }
         ],
         rows: [
           {
-            consultationType: 'Non-concession card holders',
-            feeSummary: '$65 out-of-pocket gap fee\n(Standard gap applies)'
-          },
-          {
             consultationType: 'Standard length consultation',
-            feeSummary: '$65 out-of-pocket\n($108.90 fee less $43.90 Medicare rebate)'
+            yourCost: '$65 gap',
+            feeDetails: '$108.90 fee, Medicare rebate $43.90'
           },
           {
             consultationType: 'Long consultation',
-            feeSummary: '$65 out-of-pocket\n($149.99 fee less $84.99 Medicare rebate)'
+            yourCost: '$65 gap',
+            feeDetails: '$149.99 fee, Medicare rebate $84.99'
           }
         ]
       }
     },
     additionalFees: {
-      title: 'Additional fees',
+      title: 'Fee notes',
       body:
-        'An additional fee may apply for certain procedures, including biopsies, excisions, and some consumables.',
+        '*Medicare rebates apply only to eligible patients with a valid Medicare card.',
       support:
-        'Fees are subject to change, so patients should call the clinic if they would like to confirm the cost of a specific appointment.'
+        '**Fees may vary for procedures, care plans, dressings, consumables, or other non-standard appointments.'
     },
     hours: {
       title: 'Trading hours',
       mondayToFriday: '9:00 am to 5:00 pm',
       saturday: 'Closed',
       sunday: 'Closed'
-    },
-    afterHours: {
-      title: 'After-hours care',
-      body:
-        'After-hours care is provided through Eastern Suburbs Medical Service, a specialist provider of after-hours and home-visit care.'
     },
     cta: {
       title: 'Need help with booking?',
@@ -204,9 +202,12 @@ export const siteCopy = {
     whereToFindUs: {
       title: 'Where to find us',
       body:
-        'The clinic is located directly opposite Easts Leagues Club on Spring St and sits on the first floor of The Bank Centre above Sushi Train, with Oxford St Plaza access near HSBC.',
-      support:
-        'Patients can enter from Oxford St Mall or from Spring St next to Sushi Train.'
+        'The clinic is located directly opposite Easts Leagues Club on Spring St and sits on the first floor of The Bank Centre above Sushi Train, with Oxford St Plaza access near Priceline Pharmacy.',
+      support: 'Patients can enter from:',
+      entrances: [
+        'Oxford St Mall, next to Priceline Pharmacy',
+        'Spring St, next to Sushi Train.'
+      ]
     },
     byCar: {
       title: 'By car',

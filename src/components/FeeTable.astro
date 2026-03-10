@@ -18,6 +18,11 @@ const { columns, rows } = Astro.props;
 
 <div class="fees-table-wrap">
   <table class="fees-table">
+    <thead>
+      <tr>
+        {columns.map((column) => <th scope="col">{column.label}</th>)}
+      </tr>
+    </thead>
     <tbody>
       {
         rows.map((row) => (
