@@ -35,15 +35,15 @@ export const siteConfig = {
   gaMeasurementId: import.meta.env.PUBLIC_GA_MEASUREMENT_ID ?? '',
   globalCta: {
     label: 'Book Now',
-    href: '/appointments-fees#book-now',
+    href: '/fees#book-now',
     variant: 'primary'
   },
   navItems: [
     { label: 'Home', href: '/' },
-    { label: 'Doctors / Team', href: '/doctors' },
+    { label: 'Team', href: '/doctors' },
     { label: 'Services', href: '/services' },
-    { label: 'Appointments & Fees', href: '/appointments-fees' },
-    { label: 'Contact / Location', href: '/contact' }
+    { label: 'Fees', href: '/fees' },
+    { label: 'Contact', href: '/contact' }
   ] as NavItem[]
 };
 

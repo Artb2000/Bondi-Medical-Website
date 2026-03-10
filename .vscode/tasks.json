@@ -2,71 +2,81 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Validate: Astro Check",
-      "type": "shell",
-      "command": "npm",
-      "args": ["run", "check"],
-      "group": "test"
-    },
-    {
-      "label": "Validate: Production Build",
-      "type": "shell",
-      "command": "npm",
-      "args": ["run", "build"],
-      "group": "build"
-    },
-    {
-      "label": "Validate: Check + Build",
+      "label": "Test",
       "type": "shell",
       "command": "npm run check; npm run build",
       "group": "test"
     },
     {
-      "label": "Dev: Start Astro",
+      "label": "Dev",
       "type": "shell",
       "command": "npm",
       "args": ["run", "dev"],
       "isBackground": true
     },
     {
-      "label": "Dev: Preview Build",
+      "label": "Preview",
       "type": "shell",
       "command": "npm run build; npm run preview"
     },
     {
-      "label": "Docker: Compose Build",
+      "label": "Preview 4321",
+      "type": "shell",
+      "command": "npm run build; npm run preview -- --host 127.0.0.1 --port 4321"
+    },
+    {
+      "label": "Funnel On",
+      "type": "shell",
+      "command": "tailscale funnel 4321; tailscale funnel status"
+    },
+    {
+      "label": "Funnel Status",
+      "type": "shell",
+      "command": "tailscale funnel status"
+    },
+    {
+      "label": "Funnel Off",
+      "type": "shell",
+      "command": "tailscale funnel reset"
+    },
+    {
+      "label": "Share Public",
+      "type": "shell",
+      "command": "npm run build; Start-Process -FilePath npm.cmd -ArgumentList @('run','preview','--','--host','127.0.0.1','--port','4321'); Start-Sleep -Seconds 3; tailscale funnel 4321; tailscale funnel status"
+    },
+    {
+      "label": "Docker Build",
       "type": "shell",
       "command": "docker",
       "args": ["compose", "build"]
     },
     {
-      "label": "Docker: Compose Up",
+      "label": "Docker Up",
       "type": "shell",
       "command": "docker",
       "args": ["compose", "up", "-d"]
     },
     {
-      "label": "Docker: Compose Logs (Tail 100)",
+      "label": "Docker Logs",
       "type": "shell",
       "command": "docker",
       "args": ["compose", "logs", "--tail", "100"]
     },
     {
-      "label": "Docker: Compose Down",
+      "label": "Docker Down",
       "type": "shell",
       "command": "docker",
       "args": ["compose", "down"]
     },
     {
-      "label": "Smoke: HTTP Localhost",
+      "label": "Smoke",
       "type": "shell",
       "command": "powershell",
       "args": [
         "-NoProfile",
         "-Command",
         "(Invoke-WebRequest -Uri http://localhost -UseBasicParsing).StatusCode"
-      ],
-      "group": "test"
+      ]
     }
   ]
 }

@@ -5,7 +5,7 @@ import FeeTable from '../components/FeeTable.astro';
 import SidebarCard from '../components/SidebarCard.astro';
 import { siteCopy } from '../content/siteCopy';
 
-const copy = siteCopy.appointments;
+const copy = siteCopy.fees;
 ---
 
 <BaseLayout
@@ -14,7 +14,7 @@ const copy = siteCopy.appointments;
 >
   <Fragment slot="hero">
     <section class="shell section-block">
-      <p class="kicker">Appointments & Fees</p>
+      <p class="kicker">Fees</p>
       <h1>{copy.hero.heading}</h1>
       <p>
         {copy.hero.intro}

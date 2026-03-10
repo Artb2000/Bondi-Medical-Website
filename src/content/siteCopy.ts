@@ -48,11 +48,11 @@ export const siteCopy = {
     }
   },
   doctors: {
-    title: 'Doctors | Bondi Medical Centre',
+    title: 'Team | Bondi Medical Centre',
     description:
-      'Meet the doctors at Bondi Medical Centre, including practitioners with extensive experience in general practice and skin cancer medicine.',
+      'Meet the team at Bondi Medical Centre, including practitioners with extensive experience in general practice and skin cancer medicine.',
     hero: {
-      heading: 'Doctors at Bondi Medical Centre',
+      heading: 'Team at Bondi Medical Centre',
       intro:
         'Our doctors provide general practice care with particular experience in skin cancer medicine, preventive health, and practical day-to-day treatment.'
     },
@@ -103,12 +103,12 @@ export const siteCopy = {
       body: 'Book online or call the clinic to arrange your appointment.'
     }
   },
-  appointments: {
-    title: 'Appointments & Fees | Bondi Medical Centre',
+  fees: {
+    title: 'Fees | Bondi Medical Centre',
     description:
       'View appointments, opening hours, after-hours care, and current consultation fees at Bondi Medical Centre in Bondi Junction.',
     hero: {
-      heading: 'Appointments & Fees',
+      heading: 'Fees',
       intro:
         'Bondi Medical Centre is a mixed billing practice, and phone consultations are available for existing patients who have attended the clinic within the last 12 months. We offer booked appointments and aim to accommodate walk-in patients whenever possible.'
     },
@@ -201,11 +201,11 @@ export const siteCopy = {
     }
   },
   contact: {
-    title: 'Contact Bondi Medical Centre | Bondi Junction',
+    title: 'Contact | Bondi Medical Centre',
     description:
-      'Contact Bondi Medical Centre, get directions, view parking and public transport information, and find the clinic in Bondi Junction.',
+      'Get directions, view parking and public transport information, and find Bondi Medical Centre in Bondi Junction.',
     hero: {
-      heading: 'Contact Bondi Medical Centre',
+      heading: 'Contact',
       intro:
         'Bondi Medical Centre is located in the heart of Bondi Junction and is easy to reach by car or public transport.'
     },

@@ -5,17 +5,17 @@
 | Nav label | Route | Type |
 |---|---|---|
 | Home | `/` | Page |
-| Doctors / Team | `/doctors` | Page |
+| Team | `/doctors` | Page |
 | Services | `/services` | Page |
-| Appointments & Fees | `/appointments-fees` | Page |
-| Contact / Location | `/contact` | Page |
-| Book Now | `/appointments-fees#book-now` or HotDoc link | Global CTA |
+| Fees | `/fees` | Page |
+| Contact | `/contact` | Page |
+| Book Now | `/fees#book-now` or HotDoc link | Global CTA |
 
 ## Global Content
 
 ### Header
 - Logo label: Bondi Medical Centre.
-- Primary nav: Home, Doctors / Team, Services, Appointments & Fees, Contact / Location.
+- Primary nav: Home, Team, Services, Fees, Contact.
 - Primary CTA label: Book Now.
 - CTA behavior: open HotDoc lightbox or link to the embedded booking section.
 
@@ -41,5 +41,5 @@
 
 ## Global CTA Object
 - `label`: Book Now
-- `href`: /appointments-fees#book-now
+- `href`: /fees#book-now
 - `variant`: primary

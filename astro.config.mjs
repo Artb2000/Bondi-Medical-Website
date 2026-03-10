@@ -10,6 +10,12 @@ export default defineConfig({
   output: 'static',
   integrations: [sitemap()],
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    server: {
+      allowedHosts: true
+    },
+    preview: {
+      allowedHosts: true
+    }
   }
 });

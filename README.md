@@ -28,10 +28,10 @@ Excluded:
 ## Routes
 
 - `/` Home
-- `/doctors` Doctors / Team
+- `/doctors` Team
 - `/services` Services
-- `/appointments-fees` Appointments & Fees
-- `/contact` Contact / Location
+- `/fees` Fees
+- `/contact` Contact
 
 ## Local Development
 
@@ -80,7 +80,7 @@ Page structure/content blocks are in:
 - `src/pages/index.astro`
 - `src/pages/doctors.astro`
 - `src/pages/services.astro`
-- `src/pages/appointments-fees.astro`
+- `src/pages/fees.astro`
 - `src/pages/contact.astro`
 
 Images should be placed in `public/images/`.

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -7,10 +7,10 @@
 	--ink: #16281f;
 	--muted: #4b5d55;
 	--line: #dae8e1;
-	--accent: #007c68;
-	--accent-deep: #005b4c;
+	--accent: #ff2d2d;
+	--accent-deep: #c50000;
 	--warm: #ffdfb5;
-	--shadow: 0 16px 40px rgba(18, 45, 37, 0.12);
+	--shadow: 0 16px 40px rgba(60, 16, 16, 0.12);
 }
 
 * {
@@ -23,20 +23,27 @@ body {
 	padding: 0;
 	background: var(--bg);
 	color: var(--ink);
-	font-family: 'Work Sans', sans-serif;
+	font-family: 'Manrope', sans-serif;
 }
 
 body {
 	min-height: 100vh;
-	line-height: 1.55;
+	line-height: 1.62;
+	font-weight: 500;
+	text-rendering: optimizeLegibility;
 }
 
 h1,
 h2,
 h3 {
-	font-family: 'Fraunces', serif;
+	font-family: 'Space Grotesk', sans-serif;
 	line-height: 1.1;
-	letter-spacing: -0.02em;
+	letter-spacing: -0.03em;
+}
+
+p,
+li {
+	max-width: 68ch;
 }
 
 a {
@@ -49,7 +56,7 @@ a {
 	z-index: -1;
 	background:
 		radial-gradient(circle at 90% 15%, rgba(255, 223, 181, 0.6), transparent 36%),
-		radial-gradient(circle at 15% 90%, rgba(0, 124, 104, 0.16), transparent 32%),
+		radial-gradient(circle at 15% 90%, rgba(255, 45, 45, 0.16), transparent 32%),
 		linear-gradient(180deg, #f8fcfa 0%, #eef6f2 100%);
 }
 
@@ -85,10 +92,13 @@ a {
 
 .brand strong {
 	display: block;
+	font-family: 'Space Grotesk', sans-serif;
+	font-weight: 700;
 }
 
 .brand small {
 	color: var(--muted);
+	letter-spacing: 0.01em;
 }
 
 .brand-mark {
@@ -96,7 +106,7 @@ a {
 	height: 1.2rem;
 	border-radius: 999px;
 	background: linear-gradient(140deg, var(--accent), var(--accent-deep));
-	box-shadow: 0 0 0 4px rgba(0, 124, 104, 0.16);
+	box-shadow: 0 0 0 4px rgba(255, 45, 45, 0.2);
 }
 
 .main-nav ul {
@@ -110,7 +120,8 @@ a {
 
 .main-nav a {
 	text-decoration: none;
-	font-weight: 500;
+	font-weight: 600;
+	letter-spacing: 0.01em;
 	color: var(--ink);
 	border-bottom: 2px solid transparent;
 	padding-bottom: 0.15rem;
