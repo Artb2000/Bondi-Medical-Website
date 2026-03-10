@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import DoctorCard from '../components/DoctorCard.astro';
+import BookNowButton from '../components/BookNowButton.astro';
+import { siteCopy } from '../content/siteCopy';
+
+const copy = siteCopy.doctors;
+---
+
+<BaseLayout
+  title={copy.title}
+  description={copy.description}
+>
+  <Fragment slot="hero">
+    <section class="shell section-block">
+      <p class="kicker">Doctors / Team</p>
+      <h1>{copy.hero.heading}</h1>
+      <p>
+        {copy.hero.intro}
+      </p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="contentSections">
+    <section class="shell card-grid section-block">
+      {copy.roster.map((doctor) => <DoctorCard doctor={doctor} />)}
+    </section>
+
+    <section class="shell section-block">
+      <h2>{copy.philosophy.title}</h2>
+      <p>
+        {copy.philosophy.body}
+      </p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="ctaStrip">
+    <section class="shell contact-band">
+      <h2>{copy.cta.title}</h2>
+      <p>
+        {copy.cta.body}
+      </p>
+      <BookNowButton context="doctors_page" />
+    </section>
+  </Fragment>
+</BaseLayout>

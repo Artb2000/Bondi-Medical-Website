@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BookNowButton from '../components/BookNowButton.astro';
+import { siteCopy } from '../content/siteCopy';
+import { siteConfig } from '../config/site';
+
+const copy = siteCopy.contact;
+---
+
+<BaseLayout
+  title={copy.title}
+  description={copy.description}
+>
+  <Fragment slot="hero">
+    <section class="shell section-block">
+      <p class="kicker">Contact / Location</p>
+      <h1>{copy.hero.heading}</h1>
+      <p>
+        {copy.hero.intro}
+      </p>
+    </section>
+  </Fragment>
+
+  <Fragment slot="contentSections">
+    <section class="shell info-grid section-block">
+      <article>
+        <h2>{copy.clinicDetails.title}</h2>
+        <p>{siteConfig.addressLine1}</p>
+        <p>{siteConfig.addressLine2}</p>
+        <p>Phone: <a href={`tel:${siteConfig.phoneHref}`} data-track="phone_click">{siteConfig.phoneDisplay}</a></p>
+        <p>Fax: {siteConfig.faxDisplay}</p>
+        <p>Email: <a href={`mailto:${siteConfig.email}`} data-track="email_click">{siteConfig.email}</a></p>
+      </article>
+
+      <article>
+        <h2>{copy.whereToFindUs.title}</h2>
+        <p>{copy.whereToFindUs.body}</p>
+        <p>{copy.whereToFindUs.support}</p>
+      </article>
+    </section>
+
+    <section class="shell info-grid section-block">
+      <article>
+        <h2>{copy.byCar.title}</h2>
+        <p>{copy.byCar.body}</p>
+      </article>
+
+      <article>
+        <h2>{copy.byPublicTransport.title}</h2>
+        <p>{copy.byPublicTransport.body}</p>
+      </article>
+    </section>
+
+    <section class="shell section-block">
+      <img src="/images/spring_st_Entrance.jpg" alt="Bondi Medical Spring Street access" class="location-image" />
+      <iframe
+        title="Bondi Medical Centre map"
+        src={siteConfig.mapEmbedUrl}
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        class="map-embed"
+      ></iframe>
+    </section>
+  </Fragment>
+
+  <Fragment slot="ctaStrip">
+    <section class="shell contact-band">
+      <h2>{copy.cta.title}</h2>
+      <p>{copy.cta.body}</p>
+      <BookNowButton context="contact_page" />
+    </section>
+  </Fragment>
+</BaseLayout>

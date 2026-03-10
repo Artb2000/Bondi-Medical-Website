@@ -1,0 +1,428 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+:root {
+	--bg: #f3f8f6;
+	--surface: #ffffff;
+	--ink: #16281f;
+	--muted: #4b5d55;
+	--line: #dae8e1;
+	--accent: #007c68;
+	--accent-deep: #005b4c;
+	--warm: #ffdfb5;
+	--shadow: 0 16px 40px rgba(18, 45, 37, 0.12);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	background: var(--bg);
+	color: var(--ink);
+	font-family: 'Work Sans', sans-serif;
+}
+
+body {
+	min-height: 100vh;
+	line-height: 1.55;
+}
+
+h1,
+h2,
+h3 {
+	font-family: 'Fraunces', serif;
+	line-height: 1.1;
+	letter-spacing: -0.02em;
+}
+
+a {
+	color: var(--accent-deep);
+}
+
+.page-bg {
+	position: fixed;
+	inset: 0;
+	z-index: -1;
+	background:
+		radial-gradient(circle at 90% 15%, rgba(255, 223, 181, 0.6), transparent 36%),
+		radial-gradient(circle at 15% 90%, rgba(0, 124, 104, 0.16), transparent 32%),
+		linear-gradient(180deg, #f8fcfa 0%, #eef6f2 100%);
+}
+
+.shell {
+	width: min(1100px, 92vw);
+	margin: 0 auto;
+}
+
+.site-header {
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	backdrop-filter: blur(8px);
+	background: rgba(243, 248, 246, 0.85);
+	border-bottom: 1px solid var(--line);
+}
+
+.nav-shell {
+	display: grid;
+	grid-template-columns: 1fr auto auto;
+	align-items: center;
+	gap: 1rem;
+	padding: 0.8rem 0;
+}
+
+.brand {
+	display: flex;
+	align-items: center;
+	gap: 0.7rem;
+	text-decoration: none;
+	color: var(--ink);
+}
+
+.brand strong {
+	display: block;
+}
+
+.brand small {
+	color: var(--muted);
+}
+
+.brand-mark {
+	width: 1.2rem;
+	height: 1.2rem;
+	border-radius: 999px;
+	background: linear-gradient(140deg, var(--accent), var(--accent-deep));
+	box-shadow: 0 0 0 4px rgba(0, 124, 104, 0.16);
+}
+
+.main-nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+.main-nav a {
+	text-decoration: none;
+	font-weight: 500;
+	color: var(--ink);
+	border-bottom: 2px solid transparent;
+	padding-bottom: 0.15rem;
+}
+
+.main-nav a[aria-current='page'] {
+	border-color: var(--accent);
+}
+
+.book-now-btn {
+	display: inline-block;
+	border: none;
+	cursor: pointer;
+	background: linear-gradient(120deg, var(--accent), var(--accent-deep));
+	color: #fff;
+	font-weight: 700;
+	border-radius: 999px;
+	padding: 0.65rem 1.2rem;
+	transition: transform 160ms ease;
+	text-decoration: none;
+}
+
+.book-now-btn:hover,
+.book-now-btn:focus-visible {
+	transform: translateY(-1px);
+}
+
+main {
+	display: block;
+	padding-bottom: 2.5rem;
+}
+
+.hero {
+	padding: 3.2rem 0 2rem;
+	display: grid;
+	gap: 1.4rem;
+	grid-template-columns: 1.1fr 0.9fr;
+	align-items: center;
+}
+
+.hero img {
+	width: 100%;
+	border-radius: 1rem;
+	box-shadow: var(--shadow);
+	max-height: 380px;
+	object-fit: cover;
+}
+
+.kicker {
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	font-size: 0.8rem;
+	font-weight: 700;
+	color: var(--accent-deep);
+}
+
+h1 {
+	font-size: clamp(2rem, 4vw, 3.6rem);
+	margin: 0.35rem 0 0.8rem;
+}
+
+h2 {
+	font-size: clamp(1.5rem, 2.4vw, 2.2rem);
+	margin: 0;
+}
+
+.hero-actions {
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+	margin-top: 1.1rem;
+}
+
+.ghost-link {
+	padding: 0.65rem 1.2rem;
+	border-radius: 999px;
+	border: 1px solid var(--line);
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.section-block {
+	margin-top: 2.4rem;
+}
+
+.section-head {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 1rem;
+	margin-bottom: 1rem;
+}
+
+.card-grid {
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.services-grid {
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.doctor-card,
+.service-card {
+	background: var(--surface);
+	border-radius: 1rem;
+	border: 1px solid var(--line);
+	box-shadow: var(--shadow);
+	padding: 1rem;
+}
+
+.doctor-card {
+	display: grid;
+	grid-template-columns: 130px 1fr;
+	gap: 1rem;
+}
+
+.doctor-card img {
+	width: 100%;
+	height: 130px;
+	object-fit: cover;
+	border-radius: 0.65rem;
+}
+
+.doctor-role {
+	color: var(--accent-deep);
+	font-weight: 600;
+	margin: 0.2rem 0 0.4rem;
+}
+
+.contact-band {
+	background: linear-gradient(120deg, var(--accent), var(--accent-deep));
+	color: #ecfffa;
+	border-radius: 1rem;
+	margin-top: 2.4rem;
+	padding: 1.3rem 1.4rem;
+}
+
+.contact-band a {
+	color: #fff;
+	font-weight: 700;
+}
+
+.info-grid {
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: 1fr 1fr;
+}
+
+.page-two-col {
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: 1.6fr 1fr;
+	align-items: start;
+}
+
+.sidebar-stack {
+	display: grid;
+	gap: 1rem;
+}
+
+.sidebar-card {
+	background: var(--surface);
+	border: 1px solid var(--line);
+	border-radius: 1rem;
+	padding: 1rem;
+	box-shadow: var(--shadow);
+}
+
+.sidebar-card h2 {
+	font-size: 1.25rem;
+	margin-bottom: 0.5rem;
+}
+
+.info-grid article {
+	background: var(--surface);
+	border: 1px solid var(--line);
+	border-radius: 1rem;
+	padding: 1rem;
+}
+
+.hours-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.hours-list li {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px dashed var(--line);
+	padding: 0.45rem 0;
+}
+
+.location-image,
+.map-embed {
+	width: 100%;
+	border-radius: 1rem;
+	border: 1px solid var(--line);
+}
+
+.location-image {
+	margin-bottom: 1rem;
+	max-height: 280px;
+	object-fit: cover;
+}
+
+.map-embed {
+	min-height: 350px;
+}
+
+.fees-table {
+	width: 100%;
+	border-collapse: collapse;
+	background: var(--surface);
+	border: 1px solid var(--line);
+	border-radius: 1rem;
+	overflow: hidden;
+}
+
+.fees-table caption {
+	text-align: left;
+	font-weight: 700;
+	margin-bottom: 0.8rem;
+}
+
+.fees-table th,
+.fees-table td {
+	padding: 0.8rem;
+	border-bottom: 1px solid var(--line);
+	text-align: left;
+}
+
+.site-footer {
+	border-top: 1px solid var(--line);
+	background: #eff5f2;
+	margin-top: 2rem;
+}
+
+.footer-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1rem;
+	padding: 1.5rem 0 2rem;
+}
+
+.site-footer h2 {
+	font-size: 1.1rem;
+	margin-bottom: 0.35rem;
+}
+
+.booking-modal {
+	border: none;
+	background: transparent;
+	max-width: min(1100px, 92vw);
+	width: 100%;
+}
+
+.booking-modal::backdrop {
+	background: rgba(8, 24, 20, 0.66);
+}
+
+.booking-modal-inner {
+	background: #fff;
+	border-radius: 1rem;
+	padding: 0.9rem;
+}
+
+.booking-modal iframe {
+	width: 100%;
+	min-height: 74vh;
+	border: 1px solid var(--line);
+	border-radius: 0.8rem;
+}
+
+.close-modal {
+	border: none;
+	border-radius: 999px;
+	padding: 0.45rem 0.8rem;
+	background: #eff5f2;
+	margin-bottom: 0.55rem;
+	cursor: pointer;
+}
+
+@media (max-width: 980px) {
+	.nav-shell {
+		grid-template-columns: 1fr;
+	}
+
+	.hero,
+	.info-grid,
+	.page-two-col,
+	.footer-grid,
+	.card-grid,
+	.services-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.hero {
+		padding-top: 2rem;
+	}
+
+	.doctor-card {
+		grid-template-columns: 96px 1fr;
+	}
+
+	.doctor-card img {
+		height: 96px;
+	}
+
+	.main-nav ul {
+		gap: 0.6rem 1rem;
+	}
+}

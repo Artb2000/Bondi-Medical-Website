@@ -1,0 +1,16 @@
+{
+  email {$LETSENCRYPT_EMAIL}
+}
+
+{$SITE_DOMAIN} {
+  encode zstd gzip
+
+  header {
+    X-Content-Type-Options nosniff
+    X-Frame-Options SAMEORIGIN
+    Referrer-Policy strict-origin-when-cross-origin
+    Permissions-Policy geolocation=(), microphone=(), camera=()
+  }
+
+  reverse_proxy web:4321
+}

@@ -1,0 +1,21 @@
+---
+interface Props {
+  doctor: {
+    name: string;
+    credentials: string;
+    bio: string;
+    image: string;
+  };
+}
+
+const { doctor } = Astro.props;
+---
+
+<article class="doctor-card">
+  <img src={doctor.image} alt={doctor.name} loading="lazy" />
+  <div>
+    <h3>{doctor.name}</h3>
+    <p class="doctor-role">{doctor.credentials}</p>
+    <p>{doctor.bio}</p>
+  </div>
+</article>

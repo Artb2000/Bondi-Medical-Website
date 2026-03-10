@@ -1,0 +1,35 @@
+---
+import BookNowButton from './BookNowButton.astro';
+import { siteConfig } from '../config/site';
+---
+
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <section>
+      <h2>{siteConfig.name}</h2>
+      <p>{siteConfig.addressLine1}</p>
+      <p>{siteConfig.addressLine2}</p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>
+        <a href={`tel:${siteConfig.phoneHref}`} data-track="phone_click">
+          {siteConfig.phoneDisplay}
+        </a>
+      </p>
+      <p>
+        <a href={`mailto:${siteConfig.email}`} data-track="email_click">
+          {siteConfig.email}
+        </a>
+      </p>
+      <p>{siteConfig.hoursSummary}</p>
+    </section>
+
+    <section>
+      <h2>Bookings</h2>
+      <p>Use our online booking flow for fast appointment scheduling.</p>
+      <BookNowButton context="footer" />
+    </section>
+  </div>
+</footer>

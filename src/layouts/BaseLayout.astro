@@ -1,0 +1,127 @@
+---
+import Footer from '../components/Footer.astro';
+import Navigation from '../components/Navigation.astro';
+import { analyticsEvents } from '../lib/analytics';
+import { siteConfig } from '../config/site';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const gaId = siteConfig.gaMeasurementId;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, siteConfig.siteUrl).toString()} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={new URL(Astro.url.pathname, siteConfig.siteUrl).toString()} />
+    <meta property="og:site_name" content={siteConfig.name} />
+    <title>{title}</title>
+    <slot name="seo" />
+    {
+      gaId && (
+        <>
+          <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
+          <script is:inline>
+            {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);} 
+gtag('js', new Date());
+gtag('config', '${gaId}');`}
+          </script>
+        </>
+      )
+    }
+  </head>
+  <body>
+    <div class="page-bg" aria-hidden="true"></div>
+    <Navigation />
+    <main>
+      <slot name="hero" />
+      <slot name="intro" />
+      <slot name="contentSections" />
+      <slot name="ctaStrip" />
+      <slot />
+    </main>
+    <Footer />
+
+    <dialog id="booking-modal" class="booking-modal" aria-label="Book an appointment">
+      <div class="booking-modal-inner">
+        <button class="close-modal" type="button" data-close-booking aria-label="Close booking dialog">
+          Close
+        </button>
+        <iframe
+          id="booking-frame"
+          src={siteConfig.hotdocEmbedUrl}
+          title="Book with HotDoc"
+          loading="lazy"
+        ></iframe>
+      </div>
+    </dialog>
+
+    <script
+      is:inline
+      define:vars={{
+        hotdocUrl: siteConfig.hotdocEmbedUrl,
+        analyticsEvents
+      }}
+    >
+      const modal = document.getElementById('booking-modal');
+      const frame = document.getElementById('booking-frame');
+      const closeButton = document.querySelector('[data-close-booking]');
+
+      function track(name, context) {
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', name, { context });
+        }
+      }
+
+      document.querySelectorAll('[data-book-now]').forEach((button) => {
+        button.addEventListener('click', (event) => {
+          if (!modal || !frame) {
+            return;
+          }
+
+          event.preventDefault();
+
+          if (!frame.getAttribute('src')) {
+            frame.setAttribute('src', hotdocUrl);
+          }
+
+          modal.showModal();
+          track(analyticsEvents.bookNowClick, button.dataset.context || 'unknown');
+        });
+      });
+
+      closeButton?.addEventListener('click', () => {
+        modal?.close();
+      });
+
+      modal?.addEventListener('click', (event) => {
+        if (event.target === modal) {
+          modal.close();
+        }
+      });
+
+      document.querySelectorAll('[data-track]').forEach((link) => {
+        link.addEventListener('click', () => {
+          const eventName = link.getAttribute('data-track');
+          if (!eventName) {
+            return;
+          }
+
+          track(eventName, 'link');
+        });
+      });
+    </script>
+  </body>
+</html>

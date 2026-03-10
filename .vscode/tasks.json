@@ -1,0 +1,72 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Validate: Astro Check",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "check"],
+      "group": "test"
+    },
+    {
+      "label": "Validate: Production Build",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "build"],
+      "group": "build"
+    },
+    {
+      "label": "Validate: Check + Build",
+      "type": "shell",
+      "command": "npm run check; npm run build",
+      "group": "test"
+    },
+    {
+      "label": "Dev: Start Astro",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "dev"],
+      "isBackground": true
+    },
+    {
+      "label": "Dev: Preview Build",
+      "type": "shell",
+      "command": "npm run build; npm run preview"
+    },
+    {
+      "label": "Docker: Compose Build",
+      "type": "shell",
+      "command": "docker",
+      "args": ["compose", "build"]
+    },
+    {
+      "label": "Docker: Compose Up",
+      "type": "shell",
+      "command": "docker",
+      "args": ["compose", "up", "-d"]
+    },
+    {
+      "label": "Docker: Compose Logs (Tail 100)",
+      "type": "shell",
+      "command": "docker",
+      "args": ["compose", "logs", "--tail", "100"]
+    },
+    {
+      "label": "Docker: Compose Down",
+      "type": "shell",
+      "command": "docker",
+      "args": ["compose", "down"]
+    },
+    {
+      "label": "Smoke: HTTP Localhost",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-Command",
+        "(Invoke-WebRequest -Uri http://localhost -UseBasicParsing).StatusCode"
+      ],
+      "group": "test"
+    }
+  ]
+}

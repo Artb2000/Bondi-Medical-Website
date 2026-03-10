@@ -1,0 +1,37 @@
+---
+import BookNowButton from './BookNowButton.astro';
+import { siteConfig } from '../config/site';
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="site-header">
+  <div class="shell nav-shell">
+    <a href="/" class="brand" aria-label="Bondi Medical Centre home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>
+        <strong>{siteConfig.shortName}</strong>
+        <small>Bondi, NSW</small>
+      </span>
+    </a>
+
+    <nav aria-label="Main navigation" class="main-nav">
+      <ul>
+        {
+          siteConfig.navItems.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                aria-current={currentPath === item.href ? 'page' : undefined}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <BookNowButton className="header-cta" context="header" />
+  </div>
+</header>
