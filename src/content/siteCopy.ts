@@ -52,7 +52,7 @@ export const siteCopy = {
     description:
       'Meet the team at Bondi Medical Centre, including practitioners with extensive experience in general practice and skin cancer medicine.',
     hero: {
-      heading: 'Our team of professionals',
+      heading: 'Our team',
       intro:
         'Our doctors provide general practice care with particular experience in skin cancer medicine, preventive health, and practical day-to-day treatment.'
     },

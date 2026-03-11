@@ -82,6 +82,12 @@ a {
 	padding: 0.8rem 0;
 }
 
+.header-actions {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+}
+
 .brand {
 	display: flex;
 	align-items: center;
@@ -142,11 +148,32 @@ a {
 	padding: 0.65rem 1.2rem;
 	transition: transform 160ms ease;
 	text-decoration: none;
+	text-align: center;
 }
 
 .book-now-btn:hover,
 .book-now-btn:focus-visible {
 	transform: translateY(-1px);
+}
+
+.call-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	padding: 0.65rem 1rem;
+	border-radius: 999px;
+	border: 1px solid var(--line);
+	background: var(--surface);
+	color: var(--ink);
+	font-weight: 700;
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+.call-btn svg {
+	width: 1rem;
+	height: 1rem;
+	fill: currentColor;
 }
 
 main {
@@ -230,6 +257,10 @@ h2 {
 	margin: 0 0 0.5rem;
 	font-weight: 800;
 	line-height: 1.2;
+}
+
+.service-card p + p {
+	margin-top: 0.6rem;
 }
 
 .doctor-card {
@@ -485,27 +516,41 @@ h2 {
 	}
 
 	.nav-shell {
-		grid-template-columns: minmax(0, 1fr) auto;
+		grid-template-columns: minmax(0, 1fr);
 		align-items: center;
 	}
 
 	.brand {
-		grid-column: 1;
+		grid-column: 1 / -1;
 		grid-row: 1;
 		min-width: 0;
 	}
 
 	.main-nav {
 		grid-column: 1 / -1;
-		grid-row: 2;
+		grid-row: 3;
 	}
 
-	.header-cta {
-		grid-column: 2;
-		grid-row: 1;
-		justify-self: end;
+	.header-actions {
+		grid-column: 1 / -1;
+		grid-row: 2;
+		justify-self: stretch;
 		align-self: center;
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 0.45rem;
+		width: 100%;
+	}
+
+	.header-cta,
+	.header-call-btn {
 		width: auto;
+		justify-content: center;
+		width: 100%;
+	}
+
+	.header-call-btn {
+		padding-inline: 0.8rem;
 	}
 
 	.hero,

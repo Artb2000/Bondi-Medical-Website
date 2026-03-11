@@ -6,6 +6,7 @@ export type NavItem = {
 export type ServiceItem = {
   title: string;
   description: string;
+  description2?: string;
 };
 
 export const siteConfig = {
@@ -52,21 +53,31 @@ export const services: ServiceItem[] = [
   {
     title: 'Skin checks and skin cancer care',
     description:
-      'Regular skin checks are available in-house to help identify concerns early, especially for patients spending time in the sun.'
+      'Regular skin checks are available in-house to help identify suspicious spots early, especially for patients with significant sun exposure. We also provide assessment and ongoing care for common skin cancer concerns.'
   },
   {
     title: 'Everyday GP care',
     description:
-      'The clinic provides blood pressure monitoring, medical certificates, referrals, fever assessment, flu vaccination advice, and routine consultations.'
+      'We provide routine GP care including blood pressure checks, medical certificates, referrals, fever assessment, and general consultations. Our clinic also offers advice and support for common day-to-day health concerns.'
   },
   {
     title: 'Men\'s, women\'s, and sexual health',
     description:
-      'Current service listings include women\'s health, men\'s health, family planning, pregnancy planning, and STI or STD treatment.'
+      'Our services include women\'s health, men\'s health, family planning, pregnancy planning, and STI assessment and treatment. Care is tailored to each patient\'s needs in a respectful and confidential setting.'
   },
   {
     title: 'Preventive and minor procedural care',
     description:
-      'The clinic also offers stop smoking treatment, minor surgery, and support focused on prevention and long-term health management.'
+      'We offer preventive care focused on long-term health, including stop smoking support and routine health management. Minor procedures are also available where appropriate.'
+  },
+  {
+    title: 'Travel health',
+    description:
+      'We provide travel health advice and pre-travel consultations to help you prepare for overseas trips. This may include destination-specific advice, recommended vaccinations, and general travel-related health planning.'
+  },
+  {
+    title: 'Immunisation',
+    description:
+      'We offer immunisation services for children, adults, and older patients as part of preventive healthcare. We can advise on routine vaccinations, catch-up immunisations, and vaccines recommended for work, study, or travel.'
   }
 ];

@@ -11,4 +11,5 @@ const { service } = Astro.props;
 <article class="service-card">
   <h3>{service.title}</h3>
   <p>{service.description}</p>
+  {service.description2 && <p>{service.description2}</p>}
 </article>
