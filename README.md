@@ -2,25 +2,37 @@
 
 Public-facing website for Bondi Medical Centre.
 
-This project is built as a lightweight content-only frontend with:
+## Production Architecture
+
+This project is deployed in production on a separate physical Ubuntu server using:
+
+- Docker Engine
+- Docker Compose
+- Caddy as reverse proxy and HTTPS termination
+- A static Astro site served by a web container
+
+Production deployment is Compose-first and intentionally isolated from all clinical and patient-data systems.
+
+## Tech Stack
+
 - Astro
 - Tailwind CSS
 - TypeScript
 - HotDoc booking lightbox integration
-- GA4 support via Google tag
-- Docker Compose deployment with Caddy HTTPS reverse proxy
+- Google Analytics 4 integration (optional)
+- Docker Compose + Caddy for production delivery
 
 ## Scope
 
 Included:
 - Informational pages
-- Persistent `Book Now` CTA
+- Persistent Book Now CTA
 - Embedded booking flow (HotDoc lightbox modal)
 - Contact/location details and opening hours
-- Docker + Caddy deployment assets
+- Docker Compose and Caddy deployment assets
 
 Excluded:
-- CMS / staff admin UI
+- CMS or staff admin UI
 - Contact or appointment request forms
 - Patient login
 - Custom backend or database features
@@ -40,7 +52,7 @@ npm install
 npm run dev
 ```
 
-Checks and production build:
+Checks and build:
 
 ```bash
 npm run check
@@ -48,48 +60,18 @@ npm run build
 npm run preview
 ```
 
-## Environment Variables
+## Production Deployment Docs
 
-Copy `.env.example` to `.env` and set values.
-
-- `PUBLIC_HOTDOC_EMBED_URL`: HotDoc booking URL used by the lightbox iframe.
-- `PUBLIC_GA_MEASUREMENT_ID`: GA4 property ID (for example `G-XXXXXXXXXX`).
-- `SITE_DOMAIN`: Public domain for Caddy virtual host.
-- `LETSENCRYPT_EMAIL`: Email used for TLS certificate registration.
-
-Note: `PUBLIC_*` values are compiled into the static site at build time.
-
-## Deployment (Ubuntu 24.04 + Docker Compose)
-
-See `docs/deployment-ubuntu.md` for full instructions.
-
-Quick start:
-
-```bash
-cp .env.example .env
-docker compose build
-docker compose up -d
-```
-
-## Content Updates in Code
-
-Primary content placeholders are in:
-- `src/config/site.ts`
-
-Page structure/content blocks are in:
-- `src/pages/index.astro`
-- `src/pages/doctors.astro`
-- `src/pages/services.astro`
-- `src/pages/fees.astro`
-- `src/pages/contact.astro`
-
-Images should be placed in `public/images/`.
-
-Content handoff template is in `docs/content-template.md`.
+- Ubuntu deployment runbook: `docs/deployment-ubuntu.md`
+- Environment variables reference: `docs/environment-variables.md`
+- Backup and rollback: `docs/backup-rollback.md`
+- Validation checklist: `docs/validation-checklist.md`
+- Future content updates in code: `docs/content-updates.md`
 
 ## Security and Isolation Requirements
 
 - Deploy only to a separate public-facing host.
-- Do not connect this stack to clinical or patient-data environments.
-- Expose only `80` and `443` on the public server.
+- No direct network path to clinical or patient-data environments.
+- No shared database, file mounts, or service dependencies with practice systems.
+- Expose only ports 80 and 443 publicly.
 - Keep host OS and container images updated.

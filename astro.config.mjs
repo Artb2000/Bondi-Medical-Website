@@ -5,8 +5,10 @@ import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
+const siteUrl = process.env.SITE_URL || 'https://bondimedical.example.com';
+
 export default defineConfig({
-  site: 'https://bondimedical.example.com',
+  site: siteUrl,
   output: 'static',
   integrations: [sitemap()],
   vite: {
