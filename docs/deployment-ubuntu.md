@@ -17,7 +17,7 @@ Mandatory isolation controls:
 ## 2. Domain and DNS Requirements
 
 Before deployment:
-- Choose production FQDN, for example `www.example.com`.
+- Choose production FQDN, for example `www.bondimedicalcentre.com.au`.
 - Create DNS records:
 	- `A` record (and `AAAA` if IPv6) pointing to this Ubuntu server.
 - Wait for propagation and verify:

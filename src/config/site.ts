@@ -12,7 +12,7 @@ export type ServiceItem = {
 export const siteConfig = {
   name: 'Bondi Medical Centre',
   shortName: 'Bondi Medical Centre',
-  siteUrl: 'https://bondimedical.example.com',
+  siteUrl: 'https://www.bondimedicalcentre.com.au',
   email: 'info@bondimedicalcentre.com.au',
   phoneDisplay: '(02) 9389 7667',
   phoneHref: '+61293897667',

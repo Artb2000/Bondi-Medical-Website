@@ -10,15 +10,15 @@ Set these values in `.env` at the repository root before running Docker Compose.
 
 - `SITE_DOMAIN`
   - Purpose: Public domain Caddy listens on and secures with HTTPS.
-  - Example: `www.example.com`
+  - Example: `www.bondimedicalcentre.com.au`
 
 - `SITE_URL`
   - Purpose: Canonical site URL used by Astro at build time for sitemap/canonical output.
-  - Example: `https://www.example.com`
+  - Example: `https://www.bondimedicalcentre.com.au`
 
 - `LETSENCRYPT_EMAIL`
   - Purpose: Contact email used by Caddy/Let's Encrypt certificate operations.
-  - Example: `ops@example.com`
+  - Example: `artb2000@gmail.com`
 
 ## Optional
 
@@ -32,9 +32,9 @@ Set these values in `.env` at the repository root before running Docker Compose.
 ```dotenv
 PUBLIC_HOTDOC_EMBED_URL=https://www.hotdoc.com.au/medical-centres
 PUBLIC_GA_MEASUREMENT_ID=
-SITE_DOMAIN=bondimedical.example.com
-SITE_URL=https://bondimedical.example.com
-LETSENCRYPT_EMAIL=ops@example.com
+SITE_DOMAIN=www.bondimedicalcentre.com.au
+SITE_URL=https://www.bondimedicalcentre.com.au
+LETSENCRYPT_EMAIL=artb2000@gmail.com
 ```
 
 ## Notes
