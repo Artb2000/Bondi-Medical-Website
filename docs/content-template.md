@@ -5,7 +5,7 @@
 | Nav label | Route | Type |
 |---|---|---|
 | Home | `/` | Page |
-| Team | `/doctors` | Page |
+| Team | `/team` | Page |
 | Services | `/services` | Page |
 | Fees | `/fees` | Page |
 | Contact | `/contact` | Page |

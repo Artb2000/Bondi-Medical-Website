@@ -9,7 +9,7 @@ This project is deployed in production on a separate physical Ubuntu server usin
 - Docker Engine
 - Docker Compose
 - Caddy as reverse proxy and HTTPS termination
-- A static Astro site served by a web container
+- Nginx in the web container to serve the built Astro static site
 
 Production deployment is Compose-first and intentionally isolated from all clinical and patient-data systems.
 
@@ -40,7 +40,7 @@ Excluded:
 ## Routes
 
 - `/` Home
-- `/doctors` Team
+- `/team` Team
 - `/services` Services
 - `/fees` Fees
 - `/contact` Contact

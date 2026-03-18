@@ -9,7 +9,7 @@ Primary content data:
 
 Page-level structure/content slots:
 - `src/pages/index.astro`
-- `src/pages/doctors.astro`
+- `src/pages/team.astro`
 - `src/pages/services.astro`
 - `src/pages/fees.astro`
 - `src/pages/contact.astro`

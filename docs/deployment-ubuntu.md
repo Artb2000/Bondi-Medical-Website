@@ -7,7 +7,7 @@ This runbook deploys the public website to a separate physical Ubuntu host with 
 - Host: dedicated public-facing Ubuntu 24.04 LTS server.
 - Runtime: Docker Engine + Docker Compose plugin.
 - Web layer: Caddy as reverse proxy and TLS terminator.
-- App layer: static site container serving Astro build output.
+- App layer: nginx serving the built Astro static site.
 
 Mandatory isolation controls:
 - No direct network path from this host to clinical or patient-data systems.

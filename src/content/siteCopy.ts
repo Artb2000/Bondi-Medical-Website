@@ -47,7 +47,7 @@ export const siteCopy = {
       body: 'Book online any time, or call the clinic directly if your appointment is urgent.'
     }
   },
-  doctors: {
+  team: {
     title: 'Team | Bondi Medical Centre',
     description:
       'Meet the team at Bondi Medical Centre, including practitioners with extensive experience in general practice and skin cancer medicine.',

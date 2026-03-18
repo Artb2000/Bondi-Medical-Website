@@ -13,7 +13,7 @@ Run this checklist after first deploy and each production update.
 ## B. Core Site Routing
 
 - [ ] `/` loads.
-- [ ] `/doctors` loads.
+- [ ] `/team` loads.
 - [ ] `/services` loads.
 - [ ] `/fees` loads.
 - [ ] `/contact` loads.

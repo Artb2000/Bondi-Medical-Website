@@ -42,7 +42,7 @@ export const siteConfig = {
   },
   navItems: [
     { label: 'Home', href: '/' },
-    { label: 'Team', href: '/doctors' },
+    { label: 'Team', href: '/team' },
     { label: 'Services', href: '/services' },
     { label: 'Fees', href: '/fees' },
     { label: 'Contact', href: '/contact' }
