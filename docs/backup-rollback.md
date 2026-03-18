@@ -68,6 +68,15 @@ docker compose up -d
 
 If rollback needs previous `.env`, restore it before rebuild.
 
+For server-based rollback automation:
+
+```bash
+chmod +x rollback.sh
+./rollback.sh <KNOWN_GOOD_TAG_OR_COMMIT> production
+```
+
+The script expects the repository to live at `/opt/Bondi-Medical-Website` and uses `.env.production` for production or `.env.staging` for staging.
+
 ## Minimum Retention Guidance
 
 - Keep at least 7 daily backups and 4 weekly backups.

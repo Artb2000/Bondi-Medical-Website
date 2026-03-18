@@ -1,6 +1,6 @@
-# Environment Variables (Production)
+# Environment Variables
 
-Set these values in `.env` at the repository root before running Docker Compose.
+Set these values in the environment file used for deployment, such as `.env`, `.env.staging`, or `.env.production`.
 
 ## Required
 
@@ -27,13 +27,23 @@ Set these values in `.env` at the repository root before running Docker Compose.
   - Example: `G-XXXXXXXXXX`
   - Behavior when blank: GA script is not injected.
 
-## Example `.env`
+## Example `.env.production`
 
 ```dotenv
 PUBLIC_HOTDOC_EMBED_URL=https://www.hotdoc.com.au/medical-centres
 PUBLIC_GA_MEASUREMENT_ID=
 SITE_DOMAIN=www.bondimedicalcentre.com.au
 SITE_URL=https://www.bondimedicalcentre.com.au
+LETSENCRYPT_EMAIL=artb2000@gmail.com
+```
+
+## Example `.env.staging`
+
+```dotenv
+PUBLIC_HOTDOC_EMBED_URL=https://www.hotdoc.com.au/medical-centres
+PUBLIC_GA_MEASUREMENT_ID=
+SITE_DOMAIN=staging.ptload.com.au
+SITE_URL=https://staging.ptload.com.au
 LETSENCRYPT_EMAIL=artb2000@gmail.com
 ```
 

@@ -68,6 +68,26 @@ npm run preview
 - Validation checklist: `docs/validation-checklist.md`
 - Future content updates in code: `docs/content-updates.md`
 
+## Deployment Script
+
+For Ubuntu server deployments, use `deploy.sh` from the server after creating environment-specific files such as `.env.staging` and `.env.production`. Example templates are committed as `.env.staging.example` and `.env.production.example`.
+
+```bash
+cp .env.staging.example .env.staging
+cp .env.production.example .env.production
+chmod +x deploy.sh
+./deploy.sh staging main
+./deploy.sh production main
+```
+
+For rollbacks on the Ubuntu server, use `rollback.sh` with a known-good tag or commit.
+
+```bash
+chmod +x rollback.sh
+./rollback.sh v1.0.0 production
+./rollback.sh <commit-sha> staging
+```
+
 ## Security and Isolation Requirements
 
 - Deploy only to a separate public-facing host.

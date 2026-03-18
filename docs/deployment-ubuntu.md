@@ -55,10 +55,10 @@ Recommended host hardening:
 ```bash
 git clone <REPO_URL>
 cd Bondi-Medical-Website
-cp .env.example .env
+cp .env.production.example .env.production
 ```
 
-Set required values in `.env` (see `docs/environment-variables.md`):
+Set required values in `.env.production` (see `docs/environment-variables.md`):
 - `PUBLIC_HOTDOC_EMBED_URL`
 - `SITE_DOMAIN`
 - `SITE_URL`
@@ -66,6 +66,8 @@ Set required values in `.env` (see `docs/environment-variables.md`):
 
 Optional:
 - `PUBLIC_GA_MEASUREMENT_ID` (leave blank to disable GA)
+
+For staging validation on a domain you control, copy `.env.staging.example` to `.env.staging` and use `staging.ptload.com.au`.
 
 ## 5. First Production Deploy
 
@@ -101,6 +103,15 @@ docker compose up -d
 
 Post-update:
 - Re-run `docs/validation-checklist.md`.
+
+Alternative scripted deploy:
+
+```bash
+chmod +x deploy.sh
+./deploy.sh production main
+```
+
+The script expects the repository to live at `/opt/Bondi-Medical-Website` and uses `.env.production` for production or `.env.staging` for staging.
 
 ## 8. Monitoring and Maintenance
 
