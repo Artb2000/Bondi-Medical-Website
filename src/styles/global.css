@@ -205,6 +205,50 @@ main {
 	color: var(--accent-deep);
 }
 
+.top-announcement {
+	margin-top: 1.2rem;
+	margin-bottom: -0.5rem;
+	padding: 0.7rem 1rem;
+	border-radius: 0.8rem;
+	background: linear-gradient(120deg, var(--accent), var(--accent-deep));
+	border: 1px solid #a20000;
+	box-shadow: 0 10px 24px rgba(90, 10, 10, 0.28);
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 0.7rem 1.2rem;
+}
+
+.top-announcement p {
+	margin: 0;
+	max-width: none;
+	font-size: 0.95rem;
+	font-weight: 700;
+	letter-spacing: 0.03em;
+	color: #fff;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.6rem;
+	text-align: center;
+}
+
+.top-announcement a {
+	color: inherit;
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+.announcement-icon {
+	width: 1.3rem;
+	height: 1.3rem;
+	stroke: currentColor;
+	fill: none;
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	flex: 0 0 auto;
+}
+
 h1 {
 	font-size: clamp(2rem, 4vw, 3.6rem);
 	margin: 0.35rem 0 0.8rem;
@@ -452,6 +496,24 @@ h2 {
 	margin-top: 2.2rem;
 }
 
+.bulk-billing-pane p {
+	margin: 0;
+}
+
+.bulk-billing-pane {
+	scroll-margin-top: 7rem;
+}
+
+.bulk-billing-list {
+	margin: 0.8rem 0 1rem;
+	padding-left: 1.3rem;
+	list-style: disc;
+}
+
+.bulk-billing-list li + li {
+	margin-top: 0.35rem;
+}
+
 
 .site-footer {
 	border-top: 1px solid var(--line);
@@ -560,6 +622,15 @@ h2 {
 	.card-grid,
 	.services-grid {
 		grid-template-columns: 1fr;
+	}
+
+	.top-announcement {
+		grid-template-columns: 1fr;
+	}
+
+	.top-announcement p {
+		justify-content: flex-start;
+		text-align: left;
 	}
 
 	.hero {

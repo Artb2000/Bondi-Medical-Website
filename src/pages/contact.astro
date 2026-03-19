@@ -24,17 +24,17 @@ const copy = siteCopy.contact;
     <section class="shell info-grid section-block">
       <article class="contact-pane">
         <h2>{copy.clinicDetails.title}</h2>
-        <p>{siteConfig.addressLine1}</p>
-        <p>{siteConfig.addressLine2}</p>
-        <p>{siteConfig.addressLine3}</p>
+        <p class="contact-address">
+          {siteConfig.addressLine1}<br />
+          {siteConfig.addressLine2}<br />
+          {siteConfig.addressLine3}
+        </p>
         <p>Phone: <a href={`tel:${siteConfig.phoneHref}`} data-track="phone_click">{siteConfig.phoneDisplay}</a></p>
         <p>Fax: {siteConfig.faxDisplay}</p>
         <p>Email: <a href={`mailto:${siteConfig.email}`} data-track="email_click">{siteConfig.email}</a></p>
       </article>
-    </section>
 
-    <section class="shell section-block">
-      <article class="sidebar-card contact-pane">
+      <article class="contact-pane">
         <h2>Trading hours</h2>
         <ul class="hours-list">
           {

@@ -11,8 +11,12 @@
       "label": "Dev",
       "type": "shell",
       "command": "npm",
-      "args": ["run", "dev"],
-      "isBackground": true
+      "args": [
+        "run",
+        "dev"
+      ],
+      "isBackground": true,
+      "problemMatcher": []
     },
     {
       "label": "Preview",
@@ -48,25 +52,40 @@
       "label": "Docker Build",
       "type": "shell",
       "command": "docker",
-      "args": ["compose", "build"]
+      "args": [
+        "compose",
+        "build"
+      ]
     },
     {
       "label": "Docker Up",
       "type": "shell",
       "command": "docker",
-      "args": ["compose", "up", "-d"]
+      "args": [
+        "compose",
+        "up",
+        "-d"
+      ]
     },
     {
       "label": "Docker Logs",
       "type": "shell",
       "command": "docker",
-      "args": ["compose", "logs", "--tail", "100"]
+      "args": [
+        "compose",
+        "logs",
+        "--tail",
+        "100"
+      ]
     },
     {
       "label": "Docker Down",
       "type": "shell",
       "command": "docker",
-      "args": ["compose", "down"]
+      "args": [
+        "compose",
+        "down"
+      ]
     },
     {
       "label": "Smoke",
